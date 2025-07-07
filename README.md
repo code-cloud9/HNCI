@@ -1,5 +1,3 @@
-# HNCI
-
 ## Introduction
 
 The code is for reproducing the numerical experiments and data example results in 'HNCI: High-dimensional Network Causal Inference'.
