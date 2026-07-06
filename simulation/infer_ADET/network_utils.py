@@ -285,7 +285,7 @@ def infer_tau(y_outcomes, gamma_full, treatment, k_input, propen_vec, beta_group
     sigma2 = (residuals.T @ residuals) / (x_control_k.shape[0] - x_control_k.shape[1])
 
     tau_or = np.mean(y_outcomes[treatment == 1] - f_full_ols[treatment == 1])
-    tau_dr = tau_or + np.sum((y_outcomes[treatment == 0] - f_full_ols[treatment == 0]) *
+    tau_dr = tau_or - np.sum((y_outcomes[treatment == 0] - f_full_ols[treatment == 0]) *
              propen_vec[treatment == 0] / (1 - propen_vec[treatment == 0])) / np.sum(treatment)
 
     v_vec = np.sum(x_full_k[treatment == 1], axis=0) / np.sum(treatment)
