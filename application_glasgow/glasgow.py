@@ -34,7 +34,7 @@ lambda_choose = [lambda_candidates[i] for i in bic_indices]
 
 # infer k0
 cs = confident_set_k(num_repo=100, y_outcomes=Y, gamma_full=gamma_matrix, treatment=Z,
-                     candidates=[0, 1, 2], lambda_tune=5, alpha=0.1, m=None)
+                     candidates=[0, 1, 2], lambda_tune=np.mean(lambda_choose), alpha=0.1, m=None)
 
 k_eg = 2
 
