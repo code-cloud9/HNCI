@@ -109,10 +109,6 @@ for i in range(0,iteration_time):
     if k0_true in data[0][i][2]:
         Alg12_coverage_prob = Alg12_coverage_prob + 1
 
-
-print("average length of Alg1 is:", Alg1_length/ iteration_time)
-print("coverage probability of Alg1 is", Alg1_coverage_prob / iteration_time)
-
 print("average length of Alg2 is:", Alg2_length/ iteration_time)
 print("coverage probability of Alg2 is", Alg2_coverage_prob / iteration_time)
 
