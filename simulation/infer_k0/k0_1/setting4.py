@@ -48,7 +48,7 @@ def process_each_iteration():
                         sigma1=0.5,
                         f_type='linear')
 
-        lambdas_generated = [0.001, 0.005, 0.01, 0.005, 0.1, 1, 5, 10, 20, 30, 40, 50, 100, 1000]
+        lambdas_generated = [0.001, 0.005, 0.01, 0.05, 0.1, 1, 5, 10, 20, 30, 40, 50, 100, 1000]
         # Alg1 - infer k0 - with BIC
         candi_set_bic = candidate_set_k_bic(num_repo_b=200, y_outcomes=Y, gamma_full=gamma_matrix,
                                             treatment=Z, lambda_list=lambdas_generated, m=smallest_k_refine)
@@ -108,10 +108,6 @@ for i in range(0,iteration_time):
     Alg12_length = Alg12_length + len(data[0][i][2])
     if k0_true in data[0][i][2]:
         Alg12_coverage_prob = Alg12_coverage_prob + 1
-
-
-print("average length of Alg1 is:", Alg1_length/ iteration_time)
-print("coverage probability of Alg1 is", Alg1_coverage_prob / iteration_time)
 
 print("average length of Alg2 is:", Alg2_length/ iteration_time)
 print("coverage probability of Alg2 is", Alg2_coverage_prob / iteration_time)
