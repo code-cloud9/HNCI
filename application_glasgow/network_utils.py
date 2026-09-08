@@ -687,7 +687,7 @@ def optim_alg2_penal_k(y_control_sample, gamma_control, candidate_list, n_contro
         x_k_prime = design_matrix_given_groups(gamma_control, groups_k_prime)
 
         beta_tune = cp.Variable(len(groups_k_prime))
-        k_penalty = lambda_conf * len(groups_k_prime)
+        k_penalty = lambda_conf * k_prime
 
         # Define the objective function
         residual_k_prime = y_control_sample - x_k_prime @ beta_tune
