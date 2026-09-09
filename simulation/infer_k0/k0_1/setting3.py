@@ -1,6 +1,7 @@
 from network_utils import *
 from joblib import Parallel, delayed
 
+np.random.seed(123)
 n = 1000 
 p_er = 0.02
 iteration_time = 500
